@@ -1,0 +1,215 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "@tomtom-international/web-sdk-plugin-searchbox/dist/SearchBox.css";
+
+@import "@tomtom-international/web-sdk-maps";
+
+/*@import "@fontsource/figtree";*/
+
+/*body {
+    font-family: "Figtree";
+}*/
+
+
+.delete_btn {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.delete_btn::after{
+    content: '<svg class="trash  fill-current text-gray-400 hover:text-red-600 h-4 mt-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>';
+    display: block;
+}
+
+.gallery_pic:hover .delete_btn {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.delete_btn {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.delete_btn::after{
+    content: '<svg class="trash  fill-current text-gray-400 hover:text-red-600 h-4 mt-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>';
+    display: block;
+}
+
+.gallery_pic:hover .delete_btn {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    display: block;
+}
+
+/*
+.custom-file-input::before {
+    content: '+';
+    display: inline-block;
+    background: gray;
+    font-weight: 700;
+    color: rgb(69, 67, 67);
+    border-radius: 9999px;
+    padding: 5px 8px;
+    /* outline: none; */
+    /* white-space: nowrap; */
+    /* -webkit-user-select: none;
+    cursor: pointer;
+  } */
+
+
+.custom-file-input{
+    opacity: 0;
+}
+
+.custom_file::before{
+    content: '+';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: #FF385C;
+    color: white;
+    border-radius: 9999px;
+    order: 1;
+    cursor: pointer;
+}
+
+
+.notification{
+    top: -8px;
+    right: -6px;
+    z-index: 2;
+}
+
+.humburger {
+    position: relative;
+    z-index: 251;
+}
+
+.brand-logo{
+    z-index: 101;
+}
+
+.humburger .bar, .humburger::before, .humburger::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: white;
+    border-radius: 999px;
+    transition:all 500ms ease-in-out;
+}
+
+
+.humburger.active::before{
+    transform: rotate(45deg) translate(3px, 14px);
+}
+
+.humburger.active::after{
+    transform: rotate(-45deg) translate(3px, -14px);
+}
+
+.humburger.active .bar{
+    width: 0 ;
+}
+
+.promotion {
+    top: -2.8rem;
+    transition: all 200ms ease-in-out;
+}
+
+.drop_menu {
+    background-color: #FF385C;
+    z-index: 250;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 200%;
+    transition: ease-in-out 500ms;
+}
+
+.drop_menu.active{
+    left: 0;    
+}
+
+.promotion {
+    top: -3rem;
+    padding: 3px 3px;
+    color: black;
+    background-color: white;
+    background-image: -webkit-linear-gradient(30deg, #EFE842 50%, transparent 0%);
+    background-image: linear-gradient(30deg, #EFE842 50%, transparent 0%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+.promotion:hover {
+    background-position: 100%;
+    color: #FF385C;
+}
+
+.gallery{
+    aspect-ratio: 16/9;
+}
+
+.gallery_list{
+    overflow-x: scroll;
+    max-width: 100%;
+}
+
+.gallery .gallery_img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.wrapper-sm{
+    height: 420px;
+    width: 300px;
+}
+
+
+.text{
+    max-width: 200px;
+}
+
+.message{
+    max-width: 250px;
+}
+
+.message:hover{
+    background-color: rgb(234, 234, 234);
+}
+
+.dot{
+    transform: translateY(-50%);
+}
+
+.bar-1, .bar-2{
+    height: 3px;
+    width: 20px;
+    background-color: #FF385C;
+    border-radius: 9999999px;
+}
+
+.bar-1{
+    transform: rotate(90deg) translateY(-10px);
+}
+
+.bar-2{
+    transform: translateX(-10px);
+}
